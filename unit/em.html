@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <title>相对单位-em</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-size: 16px;
+        }
+
+        .slogan {
+            font-size: 1.2em;
+            padding: 1.2em;
+            background-color: #ccc;
+        }
+        ul{
+            font-size: .8em;
+        }
+    </style>
+</head>
+
+<body>
+    身体力行
+    <p class="slogan">
+        身体力行
+    </p>
+   <code>
+    body {
+        font-size: 16px;
+    }
+
+    .slogan {
+        font-size: 1.2em;
+        padding: 1.2em;
+        background-color: #ccc;
+    }
+   </code>
+    <ul>
+        <li>x<ul>
+                <li>x.x<ul>
+                        <li>x.x.x</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <code>
+        ul{
+            font-size: .8em;
+        }
+        解决：
+        ul ul{
+            font-size: 1em;
+        }
+    </code>
+</body>
+
+</html>

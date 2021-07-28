@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单位-混合使用</title>
+    <style>
+        :root {
+            font-size: 0.75em;
+        }
+
+        @media(min-width:800px) {
+            :root {
+                font-size: 0.875em;
+            }
+        }
+
+        @media(min-width:1200px) {
+            :root {
+                font-size: 1em;
+            }
+        }
+
+        .panel {
+            font-size: 1rem;
+            padding: 1em;
+            border-radius: 0.5em;
+            border: 1px solid #999;
+
+        }
+
+        .panel > h2 {
+            margin-top: 0;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .panel.large{
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <h2>哈哈</h2>
+        <div class="panel-body">
+            试试看一个面板怎么能够简单显示出来，不信你看看<a href="/clickme">点我试试</a>这里就是一个简单示例
+        </div>
+    </div>
+    <div class="panel large">
+        <h2>哈哈</h2>
+        <div class="panel-body">
+            仅仅依靠设置一个fontsize就更改整个组件大小；试试看一个面板怎么能够简单显示出来，不信你看看<a href="/clickme">点我试试</a>这里就是一个简单示例
+        </div>
+    </div>
+</body>
+
+</html>
