@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边距折叠</title>
+    <style>
+        :root {
+            /*默认是contentbox，但是对宽高的预期不友好*/
+            box-sizing: border-box;
+        }
+
+        /*全局更改，简单省事*/
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            background-color: #eee;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+        /* *+* 选择器很像猫头鹰，所以较猫头鹰选择器 */
+        body *+* {
+            margin-top: 0.5em;
+        }
+
+        header {
+            /*相同上下边距，使得整个文字自然居中*/
+            padding: 1em 1.5em;
+            color: #fff;
+            background-color: #0072b0;
+            border-radius: 0.5em;
+        }
+
+        .container {
+            /*产生等高列*/
+            display: flex;
+        }
+
+        .main {
+            width: 70%;
+            padding: 1em 1.5em;
+            background-color: #fff;
+            border-radius: 0.5em;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding: 1.5em;
+            /*由于猫头鹰选择器会产生这个副作用，故需要把top设置成0*/
+            margin-top: 0;
+            margin-left: 1.5em;
+            background-color: #fff;
+            border-radius: .5em;
+        }
+
+        .button-link {
+            display: block;
+            color: #fff;
+            background-color: #0090c9;
+            padding: 0.5em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        /* .button-link+.button-link {
+            margin-top: 0.5em;
+        } */
+
+        /*这里有个问题就是sponsor离上面button太近，加margin可以，有更好解决办法如上，猫头鹰选择器*/
+        .sponsor-link {
+            display: block;
+            color: #0072b0;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        学习css奇技淫巧
+    </header>
+    <div class="container">
+
+        <main class="main">
+            <h2>哈哈</h2>
+            <div class="panel-body">
+                试试看一个面板怎么能够简单显示出来，不信你看看<a href="/clickme">点我试试</a>这里就是一个简单示例
+            </div>
+        </main>
+        <aside class="sidebar">
+            <a href="https://baidu.com" class="button-link">baidu</a>
+            <a href="https://bing.com" class="button-link">bing</a>
+            <a href="https://so.com" class="sponsor-link">become a sponsor</a>
+        </aside>
+    </div>
+</body>
+
+</html>
